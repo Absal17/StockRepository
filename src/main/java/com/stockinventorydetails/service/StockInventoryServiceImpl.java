@@ -38,9 +38,7 @@ public class StockInventoryServiceImpl implements StockInventoryService {
 
 	@Override
 	public void deleteStockDetails(StockDetails stockDetails,String stockName) {
-		if(stockDetails.getQuantity() == 0) {
 			stockinventoryDao.delete(stockDetails);
-		}
 	}
 
 	@Override
