@@ -13,7 +13,7 @@ public interface StockInventoryService {
 
 	public void updateStockDetails(StockDetails stockDetails, String stockName);
 
-	public void deleteStockDetails(String stockName);
+	public void deleteStockDetails(StockDetails stockDetails,String stockName);
 
 	public StockDetails getStockDetail(String stockName);
 

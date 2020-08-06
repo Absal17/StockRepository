@@ -2,6 +2,7 @@ package com.stockinventorydetails.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,8 +34,10 @@ public class StockInventoryServiceImpl implements StockInventoryService {
 	}
 
 	@Override
-	public void deleteStockDetails(String stockName) {
-		stockinventoryDao.delete(stockName);;
+	public void deleteStockDetails(StockDetails stockDetails,String stockName) {
+		if(stockDetails.getQuantity() == 0) {
+			stockinventoryDao.delete(stockDetails);
+		}
 		
 	}
 

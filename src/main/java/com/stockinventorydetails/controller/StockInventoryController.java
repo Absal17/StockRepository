@@ -37,7 +37,7 @@ public class StockInventoryController {
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE,value = "/stockdetails/{stockName}")
-	public void deleteStockDetails(@PathVariable String stockName) {
-		stockInventoryService.deleteStockDetails(stockName);
+	public void deleteStockDetails(@RequestBody StockDetails stockDetails,@PathVariable String stockName) {
+		stockInventoryService.deleteStockDetails(stockDetails,stockName);
 	}
 }
