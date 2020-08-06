@@ -27,13 +27,13 @@ public class StockInventoryServiceImpl implements StockInventoryService {
 	}
 
 	@Override
-	public void updateTopic(StockDetails stockDetails, String stockName) {
+	public void updateStockDetails(StockDetails stockDetails, String stockName) {
 		stockinventoryDao.save(stockDetails);
 		
 	}
 
 	@Override
-	public void deleteTopic(String stockName) {
+	public void deleteStockDetails(String stockName) {
 		stockinventoryDao.delete(stockName);;
 		
 	}

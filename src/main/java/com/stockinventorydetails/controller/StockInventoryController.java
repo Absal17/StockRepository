@@ -22,22 +22,22 @@ public class StockInventoryController {
 	}
 	
 	@RequestMapping("/stockdetails/{stockName}")
-	public StockDetails getTopic(@PathVariable String stockName) {
+	public StockDetails getStockDetail(@PathVariable String stockName) {
 		return stockInventoryService.getStockDetail(stockName);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/stockdetails")
-	public void addTopic(@RequestBody StockDetails stockDetails) {
+	public void addStockDetails(@RequestBody StockDetails stockDetails) {
 		stockInventoryService.addStockDetails(stockDetails);
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/stockdetails/{stockName}")
-	public void updateTopic(@RequestBody StockDetails stockDetails, @PathVariable String stockName) {
-		stockInventoryService.updateTopic(stockDetails, stockName);
+	public void updateStockDetails(@RequestBody StockDetails stockDetails, @PathVariable String stockName) {
+		stockInventoryService.updateStockDetails(stockDetails, stockName);
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE,value = "/stockdetails/{stockName}")
-	public void deleteTopic(@PathVariable String stockName) {
-		stockInventoryService.deleteTopic(stockName);
+	public void deleteStockDetails(@PathVariable String stockName) {
+		stockInventoryService.deleteStockDetails(stockName);
 	}
 }
