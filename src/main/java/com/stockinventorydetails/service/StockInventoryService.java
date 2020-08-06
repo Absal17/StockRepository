@@ -11,9 +11,9 @@ public interface StockInventoryService {
 
 	public void addStockDetails(StockDetails stockDetails);
 
-	public void updateTopic(StockDetails stockDetails, String id);
+	public void updateTopic(StockDetails stockDetails, String stockName);
 
-	public void deleteTopic(String id);
+	public void deleteTopic(String stockName);
 
 	public StockDetails getStockDetail(String stockName);
 
