@@ -29,8 +29,11 @@ public class StockInventoryServiceImpl implements StockInventoryService {
 
 	@Override
 	public void updateStockDetails(StockDetails stockDetails, String stockName) {
-		stockinventoryDao.save(stockDetails);
-		
+		if(stockDetails.getQuantity() != 0) {
+		    stockinventoryDao.save(stockDetails);
+		} else {
+			deleteStockDetails(stockDetails, stockName);
+		}
 	}
 
 	@Override
@@ -38,7 +41,6 @@ public class StockInventoryServiceImpl implements StockInventoryService {
 		if(stockDetails.getQuantity() == 0) {
 			stockinventoryDao.delete(stockDetails);
 		}
-		
 	}
 
 	@Override
